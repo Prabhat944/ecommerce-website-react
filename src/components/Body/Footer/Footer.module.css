@@ -1,0 +1,28 @@
+.footer{
+    display:flex;
+   height:6rem;
+   background-color: rgb(42, 184, 232);
+   align-items: center;
+   justify-content: space-between;
+}
+.generics{
+    font-size: 45px;
+    color: white;
+    margin-left: 20rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.logos{
+    margin-right: 20rem;
+    font-weight: bold;
+}
+
+@media(max-width:750px){
+    .generics{
+        margin-left: 5rem;
+    }
+    .logos{
+        margin-right: 10rem;
+        font-weight: bold;
+    }  
+}

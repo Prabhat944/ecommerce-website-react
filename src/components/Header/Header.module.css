@@ -1,0 +1,51 @@
+.head{
+    height: 40px;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family:'Times New Roman', Times, serif;
+    border-bottom: 0.1rem solid white;
+}
+.headeritem{
+    margin-left: 30rem;
+    font-size: 20px;
+}
+.headeritem span{
+    margin:0 5rem;
+}
+.heading{
+    display: flex;
+    height:180px;
+    background-color: gray;
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    justify-content: center;
+
+}
+
+.buttons{
+  margin-left: 15rem;
+}
+
+
+@media(max-width:750px){
+    .head{
+        width:750px;
+    }
+    .headeritem{
+        margin-left: 5rem;
+    }
+    .headeritem span{
+        margin:0 1rem;
+    }
+    .heading{
+        background-color: gray;
+    }
+    .buttons{
+        margin-left: 5rem;
+      }
+}

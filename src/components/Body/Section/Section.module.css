@@ -1,0 +1,26 @@
+.section{
+    margin: auto;
+    width:80%; 
+}
+.section h2{
+    font-family: "Metal Mania";
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-row-gap: 70px;
+    margin-left: 12rem;
+    margin-right: auto;
+}
+
+@media(max-width:750px){
+    .items{
+        margin-left: 8rem;
+        grid-template-columns: 4fr;
+       
+    }
+}
