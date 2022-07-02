@@ -10,7 +10,7 @@ const Album=props=>{
             <div className={styles.image}>
             <img src={props.src} alt={props.alt} />
             </div>
-            <ProductForm price={props.price}/>
+            <ProductForm price={props.price} items={props.items}/>
         </div>    
     );
 };

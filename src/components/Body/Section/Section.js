@@ -9,7 +9,8 @@ const Section=props=>{
             alt={item.title} 
             name={item.name} 
             src={item.imageUrl}
-            price={item.price}/>
+            price={item.price}
+            items={item}/>
        ));
     return (<Fragment>
         <section className={styles.section}>

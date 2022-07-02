@@ -4,6 +4,7 @@ import Section from './Section/Section';
 const productsArr = [
 
     {
+    
     name:'Album 1',
 
     title: 'Colors',

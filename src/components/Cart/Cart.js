@@ -1,52 +1,16 @@
 
+import { useContext } from 'react';
+import AuthContext from '../../store/AuthContext';
 import Model from '../UI/Model';
 import styles from './Cart.module.css';
 import CartList from './CartList';
 
-const cartElements = [
-
-    {
-    
-    title: 'Colors',
-    
-    price: 100,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    
-    quantity: 2,
-    
-    },
-    
-    {
-    
-    title: 'Black and white Colors',
-    
-    price: 50,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    
-    quantity: 3,
-    
-    },
-    
-    {
-    
-    title: 'Yellow and Black Colors',
-    
-    price: 70,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    
-    quantity: 1,
-    
-    }
-    
-    ]
-    
     
 const Cart=props=>{
 
-    const cartitem=cartElements.map(item=>(
+   const ctx=useContext(AuthContext);
+
+    const cartitem=ctx.items.map(item=>(
     <CartList 
     key={Math.random().toString()}
     title={item.title}
@@ -76,7 +40,7 @@ const Cart=props=>{
         <div className={styles.cartbutton}>
             <ul>
                 <li className={styles.totallabel}>Total</li>
-                <li className={styles.totalamount}>$220</li>
+                <li className={styles.totalamount}>${ctx.total}</li>
             </ul>
             <button>PURCHASE</button>
         </div>

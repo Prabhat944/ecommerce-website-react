@@ -1,7 +1,9 @@
-import React,{Fragment} from 'react';
+import React,{Fragment, useContext} from 'react';
+import AuthContext from '../../store/AuthContext';
 import CartButton from '../Cart/CartButton';
 import styles from './Header.module.css';
 const Header=props=>{
+    const ctx=useContext(AuthContext);
 return (
     <Fragment>
     <header className={styles.header}>
@@ -13,7 +15,7 @@ return (
         </ul>
         </div>
         <div className={styles.cart}>
-        <CartButton className={styles.buttons} name='Cart' quantity='0' cartshow={props.cartshow}/>
+        <CartButton className={styles.buttons} name='Cart' quantity={ctx.totalQuantity} cartshow={props.cartshow}/>
         </div>
     </header>
     <div className={styles.heading}>The Generics</div>

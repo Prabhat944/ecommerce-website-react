@@ -1,15 +1,25 @@
-import { Component, Fragment } from "react";
+import { Fragment, useContext } from "react";
+import AuthContext from "../../store/AuthContext";
 import styles from './CartList.module.css';
 
-class CartList extends Component{
-render(){
+
+const CartList=(props)=>{
+    const ctx=useContext(AuthContext);
+    const removeItem=event=>{
+        event.preventDefault();
+        ctx.deleteItem(props.title);
+    }
+    
      return (<Fragment>
         <ul className={styles.ul}>
-            <li className={styles.img}><img src={this.props.src} alt={this.props.title}/></li>
-            <li className={styles.title}>{this.props.title}</li>
-            <li className={styles.price}>{this.props.price}</li>
-            <li className={styles.quantity}>{this.props.quantity}</li>
-            <li className={styles.remove}><button onClick={this.props.remove} >REMOVE</button></li>
+            <li className={styles.img}><img src={props.src} alt={props.title}/></li>
+            <li className={styles.title}>{props.title}</li>
+            <li className={styles.price}>{props.price}</li>
+            <li><input  
+            className={styles.quantity} 
+            defaultValue={props.quantity} 
+            /></li>
+            <li className={styles.remove}><button onClick={removeItem} >REMOVE</button></li>
         </ul>
         <ul className={styles.border}>
             <li className={styles.line1}></li>
@@ -20,7 +30,7 @@ render(){
 
 };
 
-}
+
 
 
 export default CartList;

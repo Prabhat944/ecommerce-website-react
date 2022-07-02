@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.css';
 import Body from './components/Body/Body';
 import Footer from './components/Body/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import CartButton from './components/Cart/CartButton';
 import Header from './components/Header/Header';
+import ContextProvider from './store/ContextProvider';
 
 
 const App=() => {
@@ -16,7 +17,7 @@ const CartHideHandler=()=>{
   setCartShow(false);
 };
   return (
-    <Fragment >
+    <ContextProvider >
       {cartShow && <Cart hidecart={CartHideHandler}/>}
       <Header cartshow={CartShowHandler}/>
       <main>
@@ -26,7 +27,7 @@ const CartHideHandler=()=>{
       </div>
       <Footer />
       </main>
-    </Fragment>
+    </ContextProvider>
   );
 }
 
