@@ -1,28 +1,37 @@
 .footer{
-    display:flex;
-   height:6rem;
+   position: relative;
+   width:100%;
+   bottom:0;
+   height: 15rem;
    background-color: rgb(42, 184, 232);
-   align-items: center;
+   display: flex;
    justify-content: space-between;
+   align-items: center;
+   z-index: 0;
 }
 .generics{
-    font-size: 45px;
+    width:40%;
+    font-size:10rem;
     color: white;
-    margin-left: 20rem;
+    margin-left: 10%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    float: left;
 }
 .logos{
-    margin-right: 20rem;
+
+    display: inline-block;
+    width:30%;
+    min-width: 15rem;
+    height:100%;
+    margin-left: 5%;
     font-weight: bold;
+    font-size: 5rem;
+}
+.logos ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: auto;
 }
 
-@media(max-width:750px){
-    .generics{
-        margin-left: 5rem;
-    }
-    .logos{
-        margin-right: 10rem;
-        font-weight: bold;
-    }  
-}

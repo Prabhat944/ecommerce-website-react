@@ -1,0 +1,15 @@
+
+.cartblock{
+  display: block;
+  height:9rem;
+  margin:10rem;
+}
+
+.seecart{
+  width:30rem;
+  height:90%;
+  margin-left: 43%;
+  font-size: 4rem;
+  border-radius:3rem;
+  border:none;
+}

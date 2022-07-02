@@ -1,18 +1,31 @@
-import {Fragment} from 'react';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import styles from './App.module.css';
 import Body from './components/Body/Body';
 import Footer from './components/Body/Footer/Footer';
 import Cart from './components/Cart/Cart';
+import CartButton from './components/Cart/CartButton';
 import Header from './components/Header/Header';
 
 
-function App() {
+const App=() => {
+const [cartShow,setCartShow] = useState(false);
+const CartShowHandler=()=>{
+  setCartShow(true);
+};
+const CartHideHandler=()=>{
+  setCartShow(false);
+};
   return (
-    <Fragment>
-      <Header />
+    <Fragment >
+      {cartShow && <Cart hidecart={CartHideHandler}/>}
+      <Header cartshow={CartShowHandler}/>
+      <main>
       <Body />
-      <Cart className='see_the_cart' name='See The Cart' />
+      <div className={styles.cartblock}>
+      <CartButton className={styles.seecart} name='See The Cart'  cartshow={CartShowHandler} />
+      </div>
       <Footer />
+      </main>
     </Fragment>
   );
 }

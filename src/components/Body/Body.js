@@ -51,7 +51,7 @@ const productsArr = [
 const Body=props=>{
 const dummyItem=productsArr;
 return (<Fragment>
-   <Section product={dummyItem} />
+   <Section product={dummyItem}/>
 </Fragment>
        
 );

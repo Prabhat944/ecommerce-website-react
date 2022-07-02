@@ -1,0 +1,9 @@
+.cart{
+    min-width: 100px;
+    min-height: 40px;
+    background-color: gray;
+    color: rgb(0, 255, 251);
+    border-radius: 8px;
+    font-weight: bold;
+    
+}

@@ -1,51 +1,71 @@
-.head{
-    height: 40px;
-    display: flex;
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 10rem;
     background-color: black;
-    color: white;
-    justify-content: center;
+    color:white;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
     font-family:'Times New Roman', Times, serif;
-    border-bottom: 0.1rem solid white;
+    z-index: 10;
+    border-bottom: 0.7rem solid white;
+    margin: auto;
 }
 .headeritem{
-    margin-left: 30rem;
-    font-size: 20px;
+    font-size: 5rem;
+    color:white;
+    width:75%;
+    height:100%;
+    float: left;
+    margin:0;
+    
 }
-.headeritem span{
-    margin:0 5rem;
+.headeritemlist{
+    display:flex;
+    width:70%;
+    height:100%;
+    margin:0;
+    float: right;
+    justify-content: space-between;
+    list-style-type: none;
 }
+.headeritem li{  
+    margin: auto; 
+    
+} 
+
+.cart{
+    
+    width:25%;
+    height:100%;
+    float: left;
+    margin:0;
+    
+  }
+  .buttons{
+    height:8rem;
+    width:14rem;
+    font-size: 3rem;
+    border-radius: 2rem;
+    margin:0.5rem 48%;
+    border:2px solid rgb(0, 195, 255);
+  }
 .heading{
-    display: flex;
-    height:180px;
+    position:static;
+    width:100%;
+    height:35rem;
     background-color: gray;
     color: white;
-    font-size: 100px;
+    font-size: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
-    justify-content: center;
+    margin: auto;
+    z-index: 10;
 
-}
-
-.buttons{
-  margin-left: 15rem;
-}
-
-
-@media(max-width:750px){
-    .head{
-        width:750px;
-    }
-    .headeritem{
-        margin-left: 5rem;
-    }
-    .headeritem span{
-        margin:0 1rem;
-    }
-    .heading{
-        background-color: gray;
-    }
-    .buttons{
-        margin-left: 5rem;
-      }
 }

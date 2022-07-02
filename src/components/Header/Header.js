@@ -1,17 +1,19 @@
 import React,{Fragment} from 'react';
-import Cart from '../Cart/Cart';
+import CartButton from '../Cart/CartButton';
 import styles from './Header.module.css';
 const Header=props=>{
 return (
     <Fragment>
-    <header className={styles.head}>
-        <div className={styles.headeritem}>
-        <span>HOME</span>
-        <span>STORE</span>
-        <span>ABOUT</span>
+    <header className={styles.header}>
+        <div className={styles.headeritem} >
+        <ul className={styles.headeritemlist}>
+        <li><a href={props.home}>HOME</a></li>
+        <li><a href={props.store}>STORE</a></li>
+        <li><a href={props.about}>ABOUT</a></li>
+        </ul>
         </div>
-        <div >
-        <Cart className={styles.buttons} name='Cart' quantity='0'/>
+        <div className={styles.cart}>
+        <CartButton className={styles.buttons} name='Cart' quantity='0' cartshow={props.cartshow}/>
         </div>
     </header>
     <div className={styles.heading}>The Generics</div>
