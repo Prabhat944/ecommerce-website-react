@@ -1,0 +1,26 @@
+.section{
+    height:fit-content;
+    min-height:120rem;
+    width:55%;
+    margin: auto;
+}
+.section h2{
+    text-align: center;
+    font-size: 8rem;
+    font-family: cursive;
+}
+.about{
+    width:100%;
+    height:90%;
+}
+.about img{
+    width:50rem;
+    height:50rem;
+    border-radius: 25rem;
+    margin:7rem 10rem;
+    float: left;
+}
+.about p{
+    font-size: 4.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
