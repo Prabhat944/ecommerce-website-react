@@ -19,7 +19,7 @@ return (
         {props.cart && <CartButton className={styles.buttons} name='Cart' quantity={ctx.totalQuantity} cartshow={props.cartshow}/>}
         </div>
     </header>
-    <div className={`${styles.heading} ${props.generics}`}>The Generics</div>
+    <div className={`${styles.heading} ${props.generics}`}><h2>The Generics</h2>{props.children}</div>
     </Fragment>
 );
 }

@@ -4,6 +4,7 @@ import Cart from './components/Cart/Cart';
 import ContextProvider from './store/ContextProvider';
 import Store from './pages/Store';
 import About from './pages/About';
+import Home from './pages/Home';
 
 
 const App=() => {
@@ -18,7 +19,9 @@ const CartHideHandler=()=>{
     <ContextProvider >
       {cartShow && <Cart hidecart={CartHideHandler}/>}
       
-      <Route path="/home"></Route>
+      <Route path="/home">
+        <Home />
+      </Route>
 
       <Route path="/store">
         <Store cartshow={CartShowHandler} />

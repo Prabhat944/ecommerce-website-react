@@ -1,6 +1,6 @@
 .footer{
    width:100%;
-   height: 15rem;
+   height: 25rem;
    background-color: rgb(42, 184, 232);
    display: flex;
    justify-content: space-between;
@@ -9,7 +9,7 @@
 }
 .generics{
     width:40%;
-    font-size:10rem;
+    font-size:14rem;
     color: white;
     margin-left: 10%;
     font-family: 'Times New Roman', Times, serif;
@@ -17,19 +17,18 @@
     float: left;
 }
 .logos{
-
     display: inline-block;
     width:30%;
     min-width: 15rem;
     height:100%;
-    margin-left: 5%;
+    margin-left: 2%;
     font-weight: bold;
     font-size: 5rem;
 }
 .logos ul{
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
     padding: auto;
 }
 

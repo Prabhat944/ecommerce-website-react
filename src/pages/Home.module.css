@@ -1,0 +1,46 @@
+.generics{
+    height:110rem;
+    width:100%;
+    
+}
+
+.getalbum{
+    width:50%;
+    height:15rem;
+    margin-bottom:9rem;
+    margin-left: 27%;
+    border: 0.3rem solid aqua;
+    font-size: 6rem;
+    color: white;
+    background-color: gray;
+}
+.play{
+    height:20rem;
+    width: 20rem;
+    border-radius: 10rem;
+    border:0.4rem solid aqua;
+    background-color: gray;
+    font-size: 10rem;
+    color:aqua;
+    margin-bottom: 10rem;
+    margin-left: 45%;
+}
+.play:hover,
+.getalbum:hover{
+    cursor: pointer;
+}
+.section{
+    width:55%;
+    height:fit-content;
+    margin: auto;
+    margin-bottom: 15rem;
+}
+.section h2{
+    font-size: 7rem;
+    font-family: cursive;
+    text-align: center;
+}
+.section hr{
+    width:92%;
+    margin-left:6%;
+}

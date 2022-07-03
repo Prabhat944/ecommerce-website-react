@@ -71,14 +71,16 @@
     height:55rem;
     background-color: gray;
     color: white;
-    font-size: 25rem;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
-    margin: auto;
     z-index: 10;
 
+}
+.heading h2{
+    font-size: 25rem;
+    margin-top: 10rem;
 }
 
