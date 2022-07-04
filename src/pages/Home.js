@@ -1,11 +1,28 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Footer from "../components/Body/Footer/Footer";
 import Header from "../components/Header/Header";
 import Tours from "../components/home/Tour";
 import styles from './Home.module.css';
 
 const Home=props=>{
+  const [movieList,setMovieList] = useState([]);
 
+  fetch('https://swapi.dev/api/films/')
+   .then(response=>response.json())
+   .then(data=>{
+    const MovieList=data.results.map(movie=>{
+      return {
+       date:movie.release_date,
+       name:movie.title,
+       producer:movie.producer,
+      }
+});
+setMovieList(MovieList);
+
+})
+
+const Movies=movieList.map(movie=><Tours date={movie.date} name={movie.name} producer={movie.producer} key={Math.random().toString()}/>);
+console.log(Movies)
     return (
         <Fragment>
           <Header cart={false} generics={styles.generics}>
@@ -14,18 +31,8 @@ const Home=props=>{
           </Header>
            <section className={styles.section}>
             <h2>TOURS</h2>
-            <Tours date='JUL 16' address='DETROIT, MI' place='DTE ENERGY MUSIC THEATRE'/>
-            <hr></hr>
-            <Tours date='JUL 19' address='TORONTO, ON' place='BUDWEISER STAGE'/>
-            <hr></hr> 
-            <Tours date='JUL 22' address='BRISTOW, VA' place='JIGGY LUBE LIVE'/>
-            <hr></hr>
-            <Tours date='JUL 29' address='PHEONIX, AZ' place='AK-CHIN PAVILION'/>
-            <hr></hr>
-            <Tours date='AUG 2' address='LAS VEGAS, NV' place='T-MOBILE ARENA'/>
-            <hr></hr>
-            <Tours date='AUG 7' address='CONCORD, CA' place='CONCORD PAVILION'/>
-            <hr></hr>
+            
+            {Movies}
            </section>
           <Footer />
         </Fragment>
