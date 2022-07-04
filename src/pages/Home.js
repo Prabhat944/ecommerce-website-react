@@ -6,7 +6,11 @@ import styles from './Home.module.css';
 
 const Home=props=>{
   const [movieList,setMovieList] = useState([]);
+  const [isLoading,setIsLoading] = useState(false);
 
+  
+  const MovieListHandler=()=>{
+  setIsLoading(true);
   fetch('https://swapi.dev/api/films/')
    .then(response=>response.json())
    .then(data=>{
@@ -18,11 +22,19 @@ const Home=props=>{
       }
 });
 setMovieList(MovieList);
+setIsLoading(false);
+});
+  };
 
-})
+const Movies=movieList.map(movie=>
+<Tours 
+  date={movie.date} 
+  name={movie.name} 
+  producer={movie.producer} 
+  key={Math.random().toString()}
+/>
+);
 
-const Movies=movieList.map(movie=><Tours date={movie.date} name={movie.name} producer={movie.producer} key={Math.random().toString()}/>);
-console.log(Movies)
     return (
         <Fragment>
           <Header cart={false} generics={styles.generics}>
@@ -31,8 +43,10 @@ console.log(Movies)
           </Header>
            <section className={styles.section}>
             <h2>TOURS</h2>
-            
-            {Movies}
+            <button className={styles.movielist} onClick={MovieListHandler}>Movie List</button>
+            {!isLoading && movieList.length > 0 && Movies}
+            {!isLoading && movieList.length === 0 && <p className={styles.loading}>Found No Movie</p>}
+            {isLoading && <p className={styles.loading}>Loading...</p>}
            </section>
           <Footer />
         </Fragment>

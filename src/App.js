@@ -18,7 +18,7 @@ const CartHideHandler=()=>{
   return (
     <ContextProvider >
       {cartShow && <Cart hidecart={CartHideHandler}/>}
-      
+
       <Route path="/home">
         <Home />
       </Route>
