@@ -1,5 +1,5 @@
 .section{
-   width:55%;
+   width:60%;
    height: auto;
    margin:auto;
    z-index: 0;
@@ -8,11 +8,12 @@
     font-family:cursive;
     text-align: center;
     padding: 20px;
-    font-size: 8rem;
     
 }
 .items{
     display:flex;
     flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 50px;
     
 }

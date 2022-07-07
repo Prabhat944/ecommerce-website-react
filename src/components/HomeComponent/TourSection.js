@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
-import styles from './Tour.module.css';
+import styles from './TourSection.module.css';
 
 
-const Tours=props=>{
+const TourSection=props=>{
 
     return (
         <Fragment>
@@ -14,9 +14,9 @@ const Tours=props=>{
         </ul>
         <button>BUY TICKETS</button>
         </div>
-        <hr></hr>
+        <hr/>
         </Fragment>
     );
 };
 
-export default Tours;
+export default TourSection;

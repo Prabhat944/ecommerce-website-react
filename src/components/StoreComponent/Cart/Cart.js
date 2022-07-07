@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import AuthContext from '../../store/AuthContext';
+import AuthContext from '../../../store/AuthContext';
 import Model from '../UI/Model';
 import styles from './Cart.module.css';
 import CartList from './CartList';
@@ -30,9 +30,9 @@ const Cart=props=>{
             <li className={styles.title3}>QUANTITY</li>
         </ul>
         <ul className={styles.border}>
-            <li className={styles.line1}></li>
-            <li className={styles.line2}></li>
-            <li className={styles.line3}></li>
+            <li ><hr className={styles.line1}/></li>
+            <li ><hr className={styles.line2}/></li>
+            <li ><hr className={styles.line3}/></li>
         </ul>
         <div >
             {cartitem}

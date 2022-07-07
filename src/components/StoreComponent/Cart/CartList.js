@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import AuthContext from "../../store/AuthContext";
+import AuthContext from "../../../store/AuthContext";
 import styles from './CartList.module.css';
 
 
@@ -11,7 +11,7 @@ const CartList=(props)=>{
     }
     
      return (<Fragment>
-        <ul className={styles.ul}>
+        <ul className={styles.item}>
             <li className={styles.img}><img src={props.src} alt={props.title}/></li>
             <li className={styles.title}>{props.title}</li>
             <li className={styles.price}>{props.price}</li>
@@ -22,9 +22,9 @@ const CartList=(props)=>{
             <li className={styles.remove}><button onClick={removeItem} >REMOVE</button></li>
         </ul>
         <ul className={styles.border}>
-            <li className={styles.line1}></li>
-            <li className={styles.line2}></li>
-            <li className={styles.line3}></li>
+            <li ><hr className={styles.line1} /></li>
+            <li ><hr className={styles.line2} /></li>
+            <li ><hr className={styles.line3} /></li>
         </ul>
         </Fragment>)
 

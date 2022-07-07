@@ -1,5 +1,5 @@
 import React,{Fragment} from 'react';
-import Section from './Section/Section';
+import Section from './Section';
 
 const productsArr = [
 

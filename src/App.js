@@ -1,6 +1,6 @@
 import {Route} from 'react-router-dom';
 import React, { useState } from 'react';
-import Cart from './components/Cart/Cart';
+import Cart from './components/StoreComponent/Cart/Cart';
 import ContextProvider from './store/ContextProvider';
 import Store from './pages/Store';
 import About from './pages/About';

@@ -1,28 +1,27 @@
 .generics{
-    height:110rem;
-    width:100%;
+    height:300px;
     
 }
 
 .getalbum{
-    width:50%;
-    height:15rem;
-    margin-bottom:9rem;
-    margin-left: 27%;
-    border: 0.3rem solid aqua;
-    font-size: 6rem;
+    width:60%;
+    height:50px;
+    margin-bottom:9px;
+    margin-left: 22%;
+    border: 2px solid aqua;
+    font-size: 20px;
     color: white;
     background-color: gray;
 }
 .play{
-    height:20rem;
-    width: 20rem;
-    border-radius: 10rem;
-    border:0.4rem solid aqua;
+    height:60px;
+    width: 60px;
+    border-radius: 30px;
+    border:2px solid aqua;
     background-color: gray;
-    font-size: 10rem;
+    font-size: 35px;
     color:aqua;
-    margin-bottom: 10rem;
+    margin-bottom: 10px;
     margin-left: 45%;
 }
 .play:hover,
@@ -33,28 +32,38 @@
     width:55%;
     height:fit-content;
     margin: auto;
-    margin-bottom: 15rem;
+    margin-bottom: 15px;
 }
 .movielist{
-    width:30rem;
-    height:7rem;
-    font-size: 5rem;
+    width:160px;
+    height:30px;
+    font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: aqua;
-    border-radius: 1rem;
-    margin-left: 43%;
+    border-radius: 3px;
+    margin-left: 41%;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 .section h2{
-    font-size: 7rem;
+    font-size: 25px;
     font-family: cursive;
     text-align: center;
 }
 .section hr{
     width:92%;
     margin-left:6%;
+    border:0;
+    border-top: 1px solid;
 }
 .loading{
-    font-size: 5rem;
+    font-size: 15px;
     text-align: center;
+}
+
+.footer{
+    position:relative;
+    top:100px;
+    bottom: 0;
+    
 }

@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import Body from "../components/Body/Body";
-import Header from "../components/Header/Header";
-import CartButton from '../components/Cart/CartButton';
-import Footer from '../components/Body/Footer/Footer';
+import Body from "../components/StoreComponent/Body";
+import Header from "../components/CommonComponent/Header";
+import CartButton from '../components/StoreComponent/Cart/CartButton';
+import Footer from '../components/CommonComponent/Footer';
 import styles from './Store.module.css';
 
 const Store=props=>{

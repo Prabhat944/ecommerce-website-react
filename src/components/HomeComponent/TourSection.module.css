@@ -1,13 +1,13 @@
 .tours{
     width:100%;
-    min-height:12rem;
+    min-height:32px;
     height: fit-content;
     display: flex;
     align-items: center;
 }
 .tours ul{
     list-style: none;
-    font-size: 4rem;
+    font-size: 15px;
     display: flex;
     width:70%;
     justify-content: space-between;
@@ -15,26 +15,28 @@
 }
 .date{
     font-family: monospace;
-    width:26rem;
-    margin-left: 11rem;
+    width:86px;
+    margin-left: 11px;
 
 }
 .place,
 .address{
     font-family: 'Times New Roman', Times, serif;
     color:gray;
-    width: 40rem;
-    margin-left: 10%;
+    width: 200px;
+    margin-left: 3%;
+    
 }
 .tours button{
-    width:40rem;
-    height:8rem;
-    border-radius: 1rem;
-    font-size: 3.5rem;
+    width:160px;
+    min-height: 28px;
+    height:fit-content;
+    border-radius: 1px;
+    font-size: 15px;
     font-weight:bold ;
     color: white;
     background-color: rgba(0, 191, 255, 0.818);
     border:none;
-    margin-left: 8%;
+    margin-left: 3%;
    
 }

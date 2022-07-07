@@ -1,20 +1,26 @@
 import { Fragment, useState } from "react";
-import Footer from "../components/Body/Footer/Footer";
-import Header from "../components/Header/Header";
-import Tours from "../components/home/Tour";
+import Footer from "../components/CommonComponent/Footer";
+import Header from "../components/CommonComponent/Header";
+import TourSection from "../components/HomeComponent/TourSection";
 import styles from './Home.module.css';
 
 const Home=props=>{
   const [movieList,setMovieList] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
-
+  const [error,setError] = useState(null);
   
-  const MovieListHandler=()=>{
+ async function MovieListHandler(){
   setIsLoading(true);
-  fetch('https://swapi.dev/api/films/')
-   .then(response=>response.json())
-   .then(data=>{
-    const MovieList=data.results.map(movie=>{
+  setError(null);
+  try{
+    const response=await fetch('https://swapi.dev/api/films/');
+
+    if(!response.ok){
+      throw new Error("Something went wrong!!");
+    }
+  const data=await response.json();
+  
+  const MovieList=data.results.map(movie=>{
       return {
        date:movie.release_date,
        name:movie.title,
@@ -22,12 +28,16 @@ const Home=props=>{
       }
 });
 setMovieList(MovieList);
-setIsLoading(false);
-});
-  };
 
+}
+  catch(error){
+   setError(error.message);
+  }
+  setIsLoading(false);
+};
+  
 const Movies=movieList.map(movie=>
-<Tours 
+<TourSection 
   date={movie.date} 
   name={movie.name} 
   producer={movie.producer} 
@@ -45,10 +55,11 @@ const Movies=movieList.map(movie=>
             <h2>TOURS</h2>
             <button className={styles.movielist} onClick={MovieListHandler}>Movie List</button>
             {!isLoading && movieList.length > 0 && Movies}
-            {!isLoading && movieList.length === 0 && <p className={styles.loading}>Found No Movie</p>}
+            {!isLoading && movieList.length === 0 && !error && <p className={styles.loading}>Found No Movie</p>}
+            {!isLoading && error && <p className={styles.loading}>{error}</p>}
             {isLoading && <p className={styles.loading}>Loading...</p>}
            </section>
-          <Footer />
+          <Footer className={styles.footer} />
         </Fragment>
     );
 };
