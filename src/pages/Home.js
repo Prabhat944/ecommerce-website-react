@@ -13,7 +13,7 @@ const Home=props=>{
   setIsLoading(true);
   setError(null);
   try{
-    const response=await fetch('https://swapi.dev/api/films/');
+    const response=await fetch('https://swapi.dev/api/film/');
 
     if(!response.ok){
       throw new Error("Something went wrong!!");
@@ -44,6 +44,26 @@ const Movies=movieList.map(movie=>
   key={Math.random().toString()}
 />
 );
+function retry(){setTimeout(() => {
+  MovieListHandler();
+}, 5000);
+}
+
+let contents=<p className={styles.loading}>Found No Movie</p>
+if(movieList.length > 0 ){
+ contents=Movies
+}
+if(error){
+  contents=<p className={styles.loading}>{error} <strong>Retrying...</strong> </p>
+  retry();
+}
+if(isLoading){
+  contents=<p className={styles.loading}>Loading...</p>
+}
+const onCancelHandler=()=>{
+  setError(null);
+}
+
 
     return (
         <Fragment>
@@ -54,10 +74,8 @@ const Movies=movieList.map(movie=>
            <section className={styles.section}>
             <h2>TOURS</h2>
             <button className={styles.movielist} onClick={MovieListHandler}>Movie List</button>
-            {!isLoading && movieList.length > 0 && Movies}
-            {!isLoading && movieList.length === 0 && !error && <p className={styles.loading}>Found No Movie</p>}
-            {!isLoading && error && <p className={styles.loading}>{error}</p>}
-            {isLoading && <p className={styles.loading}>Loading...</p>}
+            <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
+            {contents}
            </section>
           <Footer className={styles.footer} />
         </Fragment>
