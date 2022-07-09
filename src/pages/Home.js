@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState ,useEffect,useCallback} from "react";
 import Footer from "../components/CommonComponent/Footer";
 import Header from "../components/CommonComponent/Header";
 import TourSection from "../components/HomeComponent/TourSection";
@@ -9,11 +9,11 @@ const Home=props=>{
   const [isLoading,setIsLoading] = useState(false);
   const [error,setError] = useState(null);
   
- async function MovieListHandler(){
+ const MovieListHandler=useCallback(async()=>{
   setIsLoading(true);
   setError(null);
   try{
-    const response=await fetch('https://swapi.dev/api/film/');
+    const response=await fetch('https://swapi.dev/api/films/');
 
     if(!response.ok){
       throw new Error("Something went wrong!!");
@@ -34,7 +34,11 @@ setMovieList(MovieList);
    setError(error.message);
   }
   setIsLoading(false);
-};
+},[]);
+
+useEffect(()=>{
+MovieListHandler();
+},[MovieListHandler]);
   
 const Movies=movieList.map(movie=>
 <TourSection 
@@ -73,7 +77,7 @@ const onCancelHandler=()=>{
           </Header>
            <section className={styles.section}>
             <h2>TOURS</h2>
-            <button className={styles.movielist} onClick={MovieListHandler}>Movie List</button>
+            <button className={styles.movielist} onClick={MovieListHandler}>Fetch Movie</button>
             <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
             {contents}
            </section>
