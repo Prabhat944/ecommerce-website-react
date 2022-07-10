@@ -1,6 +1,7 @@
 import { Fragment, useState ,useEffect,useCallback} from "react";
 import Footer from "../components/CommonComponent/Footer";
 import Header from "../components/CommonComponent/Header";
+import Form from "../components/HomeComponent/Form";
 import TourSection from "../components/HomeComponent/TourSection";
 import styles from './Home.module.css';
 
@@ -24,7 +25,7 @@ const Home=props=>{
       return {
        date:movie.release_date,
        name:movie.title,
-       producer:movie.producer,
+       text:movie.opening_crawl,
       }
 });
 setMovieList(MovieList);
@@ -44,14 +45,12 @@ const Movies=movieList.map(movie=>
 <TourSection 
   date={movie.date} 
   name={movie.name} 
-  producer={movie.producer} 
+  text={movie.text} 
   key={Math.random().toString()}
 />
 );
-function retry(){setTimeout(() => {
-  MovieListHandler();
-}, 5000);
-}
+let retry;
+
 
 let contents=<p className={styles.loading}>Found No Movie</p>
 if(movieList.length > 0 ){
@@ -59,12 +58,14 @@ if(movieList.length > 0 ){
 }
 if(error){
   contents=<p className={styles.loading}>{error} <strong>Retrying...</strong> </p>
-  retry();
+  retry=setTimeout(MovieListHandler, 5000);
 }
 if(isLoading){
   contents=<p className={styles.loading}>Loading...</p>
 }
-const onCancelHandler=()=>{
+const onCancelHandler=(event)=>{
+  event.preventDefault();
+  clearTimeout(retry);
   setError(null);
 }
 
@@ -76,7 +77,8 @@ const onCancelHandler=()=>{
             <button className={styles.play}>►</button>
           </Header>
            <section className={styles.section}>
-            <h2>TOURS</h2>
+            <h2>MOVIES TOURS</h2>
+            <Form/>
             <button className={styles.movielist} onClick={MovieListHandler}>Fetch Movie</button>
             <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
             {contents}

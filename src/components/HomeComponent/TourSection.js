@@ -10,7 +10,7 @@ const TourSection=props=>{
         <ul>
             <li className={styles.date}>{props.date}</li>
             <li className={styles.address}>{props.name}</li>
-            <li className={styles.place}>{props.producer}</li>
+            <li className={styles.place}>{props.text}</li>
         </ul>
         <button>BUY TICKETS</button>
         </div>
