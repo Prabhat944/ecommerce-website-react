@@ -1,11 +1,10 @@
-import React,{ useEffect, useState } from 'react';
+import React,{ useState } from 'react';
 import styles from './Form.module.css';
 
 const Form=(props)=>{
   const [enteredTitle,setEnteredTitle] = useState('');
   const [enteredText,setEnteredText] = useState('');
   const [enteredDate,setEnteredDate] = useState('');
-  const [NewMovieObj,setMovieObj] = useState([]);
 
   const TitleInputHandler=(event)=>{
      setEnteredTitle(event.target.value);
@@ -24,17 +23,17 @@ const Form=(props)=>{
         return;
     }
     const NewMovie={
-        date:enteredDate,
+      release_date:enteredDate,
         title:enteredTitle,
-        text:enteredText
+        opening_crawl:enteredText
     }
     setEnteredDate('');
     setEnteredText('');
     setEnteredTitle('');
 
-    setMovieObj(prev=>[...prev,NewMovie]);
+    props.AddedMovie(NewMovie);
   }
-  useEffect(()=>{console.log(NewMovieObj)},[NewMovieObj])
+  
   
     return (
         <div className={styles.form}>

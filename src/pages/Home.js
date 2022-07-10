@@ -14,20 +14,24 @@ const Home=props=>{
   setIsLoading(true);
   setError(null);
   try{
-    const response=await fetch('https://swapi.dev/api/films/');
+    const response=await fetch('https://react-https-e99ad-default-rtdb.firebaseio.com/Movies.json');
 
     if(!response.ok){
       throw new Error("Something went wrong!!");
     }
   const data=await response.json();
   
-  const MovieList=data.results.map(movie=>{
-      return {
-       date:movie.release_date,
-       name:movie.title,
-       text:movie.opening_crawl,
-      }
-});
+  const MovieList=[];
+  for(const key in data){
+     MovieList.push({
+      id:key,
+      name:data[key].title,
+      date:data[key].release_date,
+      text:data[key].opening_crawl
+     })
+  }
+  
+  
 setMovieList(MovieList);
 
 }
@@ -37,16 +41,28 @@ setMovieList(MovieList);
   setIsLoading(false);
 },[]);
 
+ const AddedMovieHandler=async(movies)=>{
+  await fetch('https://react-https-e99ad-default-rtdb.firebaseio.com/Movies.json',{
+    method:'POST',
+    body:JSON.stringify(movies),
+    headers:{
+      'Content-Type':"apllication/json"
+    }
+  });
+  MovieListHandler();
+}
 useEffect(()=>{
 MovieListHandler();
 },[MovieListHandler]);
   
 const Movies=movieList.map(movie=>
 <TourSection 
+  fetchTheMovie={MovieListHandler}
   date={movie.date} 
   name={movie.name} 
   text={movie.text} 
-  key={Math.random().toString()}
+  key={movie.id}
+  id={movie.id}
 />
 );
 let retry;
@@ -78,7 +94,7 @@ const onCancelHandler=(event)=>{
           </Header>
            <section className={styles.section}>
             <h2>MOVIES TOURS</h2>
-            <Form/>
+            <Form AddedMovie={AddedMovieHandler}/>
             <button className={styles.movielist} onClick={MovieListHandler}>Fetch Movie</button>
             <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
             {contents}

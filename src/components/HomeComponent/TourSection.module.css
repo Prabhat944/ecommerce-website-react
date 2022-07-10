@@ -19,11 +19,18 @@
     margin-left: 11px;
 
 }
-.place,
-.address{
+.text{
     font-family: 'Times New Roman', Times, serif;
     color:gray;
     width: 200px;
+    margin-left: 3%;
+}
+.title{
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(28, 182, 243);
+    font-size: 20px;
+    width: 200px;
+    font-weight: bold;
     margin-left: 3%;
     
 }
