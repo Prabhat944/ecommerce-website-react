@@ -46,7 +46,7 @@ setMovieList(MovieList);
     method:'POST',
     body:JSON.stringify(movies),
     headers:{
-      'Content-Type':"apllication/json"
+      'Content-Type':"application/json"
     }
   });
   MovieListHandler();

@@ -1,11 +1,15 @@
 .form{
-   width: 100%;
+   width: 80%;
    height:fit-content;
-   
+   border:5px groove aqua;
+   margin: auto;
+   margin-bottom: 20px;
+
 }
 .form form{
-    width: 60%;
+    width: 70%;
     margin: auto;
+    padding-top: 20px;
 }
 .form label{
    font-size: 17px;
@@ -13,14 +17,14 @@
 }
 .title{
     width: 100%;
-    height: 20px;
+    height: 30px;
     border-radius: 10px;
     border:1px solid gray;
     margin-bottom: 10px;
 }
 .text{
     width: 100%;
-    height: 70px;
+    height: 80px;
     border-radius: 10px;
     border:1px solid gray;
     margin-top: 3px;
@@ -28,7 +32,7 @@
 }
 .date{
     width: 100%;
-    height: 20px;
+    height: 30px;
     border-radius: 10px;
     margin-bottom: 10px;
     border:1px solid gray;

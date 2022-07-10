@@ -5,6 +5,7 @@ import ContextProvider from './store/ContextProvider';
 import Store from './pages/Store';
 import About from './pages/About';
 import Home from './pages/Home';
+import ContactUs from './pages/ContactUs';
 
 
 const App=() => {
@@ -29,6 +30,10 @@ const CartHideHandler=()=>{
     
       <Route path="/about">
         <About />
+      </Route>
+
+      <Route path="/contact">
+        <ContactUs />
       </Route>
 
     </ContextProvider>

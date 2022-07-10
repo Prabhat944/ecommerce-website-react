@@ -35,6 +35,10 @@ right:30px;
     position: relative;
     left:30px;
 }
+.contact{
+    position: relative;
+    left: 50px;
+}
 .cart{
     width: 100px;
     height:100%;

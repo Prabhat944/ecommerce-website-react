@@ -11,6 +11,7 @@ return (
         <div><NavLink activeClassName={styles.active} className={styles.home} to='/home'>HOME</NavLink></div>
         <div><NavLink activeClassName={styles.active} className={styles.store} to='/store'>STORE</NavLink></div>
         <div><NavLink activeClassName={styles.active} className={styles.about} to='/about'>ABOUT</NavLink></div>
+        <div><NavLink activeClassName={styles.active} className={styles.contact} to='/contact'>CONTACT US</NavLink></div>
         <div className={styles.cart}>
             {props.cart && <CartButton 
                 className={styles.buttons} 
