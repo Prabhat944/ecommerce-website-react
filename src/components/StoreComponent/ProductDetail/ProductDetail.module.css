@@ -1,0 +1,50 @@
+.section{
+    width: 90vw;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+.details{
+    width: 55%;
+    margin: auto;
+}
+.itemdetail{
+    padding-left: 10px;
+}
+.itemdetail label{
+    color: aqua;
+}
+.itemdetail h2,h3,p{
+    margin-top: 0;
+}
+
+.forms{
+    width:60%;
+    height:260px;
+    margin: auto;
+}
+.forms label{
+    font-size: 18px;
+    font-weight: bold;
+}
+.forms input{
+    width:100%;
+    min-height:25px;
+    resize:vertical;
+    overflow:auto;
+    border-radius: 5px;
+}
+.forms button{
+    width:120px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 38%;
+    margin-top: 15px;
+    color: rgb(0, 0, 0);
+    background-color: aqua;
+    border: 2px solid rgb(13, 80, 225);
+    border-radius: 5px;
+}

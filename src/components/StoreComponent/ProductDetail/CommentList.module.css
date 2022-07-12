@@ -1,0 +1,17 @@
+.comments{
+    width:100%;
+    height:fit-content;
+    margin-left: 30px;
+    background-color: rgb(92, 214, 241);
+    border-radius: 10px;
+}
+.comments h2{
+    text-align: center;
+}
+.comments p{
+    width: 100%;
+    background-color: rgb(184, 237, 250);
+    border-radius: 5px;
+    font-size: 17px;
+    text-align: center;
+}

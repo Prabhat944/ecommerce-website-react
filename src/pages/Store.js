@@ -10,10 +10,10 @@ const Store=props=>{
     return (
         <Fragment>
              <Header cart={true} cartshow={props.cartshow} />
-            <Body />
-             <div className={styles.cartblock}>
-             <CartButton className={styles.seecart} name='See The Cart'  cartshow={props.cartshow} />
-            </div>
+             <Body />
+              <div className={styles.cartblock}>
+               <CartButton className={styles.seecart} name='See The Cart'  cartshow={props.cartshow} />
+              </div>
             <Footer />
         </Fragment>
     );
