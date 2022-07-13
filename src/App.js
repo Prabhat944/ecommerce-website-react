@@ -7,6 +7,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import ContactUs from './pages/ContactUs';
 import ProductDetail from './components/StoreComponent/ProductDetail/ProductDetail';
+import Login from './pages/Login';
 
 
 const App=() => {
@@ -39,11 +40,16 @@ const CartHideHandler=()=>{
       <Route path="/contact">
         <ContactUs />
       </Route>
+
+      <Route path='/store/login' exact>
+        <Login cartShow={CartShowHandler}/>
+      </Route>
       
       <Route path='/store/:productId'>
         <ProductDetail cartshow={CartShowHandler}/>
       </Route>
-
+       
+      
       </Switch>
     </ContextProvider>
   );

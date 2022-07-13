@@ -103,8 +103,7 @@ const ProductDetail=(props)=>{
     const commentItem=prevComment.map(item=>
         <CommentList key={Math.random().toString()} name={item.name} comment={item.comment} />
     );
-    console.log(prevComment);
-    console.log(commentItem);
+    
     return(
         <div>
             <Header cart={true} cartshow={props.cartshow}/>

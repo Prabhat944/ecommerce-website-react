@@ -1,0 +1,87 @@
+.section{
+    width:55%;
+    height:60vh;
+    margin: auto;
+}
+.section form{
+    width: 500px;
+    height: 80%;
+    background-color:rgb(184, 243, 243);
+    border: 3px outset aqua;
+    margin: auto;
+    margin-top: 20px;
+}
+.heading{
+    width:fit-content;
+    margin: auto;
+}
+.heading h2{
+    color: rgb(47, 138, 223);
+}
+.email{
+    display:flex;
+    flex-direction:column;
+    width:300px;
+    height:80px;
+    margin: auto;
+}
+.email label{
+  font-weight: bold;
+  margin: auto;
+  margin-bottom:5px;
+}
+.email input{
+    height:25px;
+    border-radius: 3px;
+}
+.password{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 80px;
+    margin: auto;
+}
+.password label{
+    font-weight: bold;
+    margin: auto;
+    margin-bottom:5px;
+  }
+  .password input{
+      height:25px;
+      border-radius: 3px;
+  }
+.submit{
+    width:fit-content;
+    height:fit-content;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.submit button{
+    width:fit-content;
+    min-width: 90px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: aqua;
+}
+.submit p{
+    text-align: center;
+}
+
+.authmode{
+    width: fit-content;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    color:black;
+    border: none;
+    text-decoration: underline;
+    background-color:rgb(184, 243, 243) ;
+}
+.authmode:hover{
+    cursor: pointer;
+}

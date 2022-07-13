@@ -8,17 +8,25 @@ const Header=props=>{
 return (
     <Fragment>
     <header className={styles.header}>
-        <div><NavLink activeClassName={styles.active} className={styles.home} to='/home'>HOME</NavLink></div>
-        <div><NavLink activeClassName={styles.active} className={styles.store} to='/store'>STORE</NavLink></div>
-        <div><NavLink activeClassName={styles.active} className={styles.about} to='/about'>ABOUT</NavLink></div>
-        <div><NavLink activeClassName={styles.active} className={styles.contact} to='/contact'>CONTACT US</NavLink></div>
-        <div className={styles.cart}>
-            {props.cart && <CartButton 
-                className={styles.buttons} 
-                name='Cart' 
-                quantity={ctx.totalQuantity} 
-                cartshow={props.cartshow}
-            />}
+        <div className={styles.logo}>
+            <h2>REACT_ECOMMERCE</h2>
+        </div>
+        <div className={styles.pages}>
+            <div className={styles.home}><NavLink activeClassName={styles.active}  to='/home'>HOME</NavLink></div>
+            <div className={styles.store}><NavLink activeClassName={styles.active}  to='/store'>STORE</NavLink></div>
+            <div className={styles.about}><NavLink activeClassName={styles.active}  to='/about'>ABOUT</NavLink></div>
+            <div className={styles.contact}><NavLink activeClassName={styles.active}  to='/contact'>CONTACT US</NavLink></div>
+        </div>
+        <div className={styles.authbutton}>
+            <div className={styles.login}><NavLink to='/store/login'>Login</NavLink></div>
+            <div className={styles.cart}>
+                {props.cart && <CartButton 
+                    className={styles.buttons} 
+                    name='Cart' 
+                    quantity={ctx.totalQuantity} 
+                    cartshow={props.cartshow}
+                />}
+            </div>
         </div>
     </header>
     
