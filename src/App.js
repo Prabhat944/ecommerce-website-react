@@ -10,9 +10,12 @@ import ProductDetail from './components/StoreComponent/ProductDetail/ProductDeta
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Layout from './components/CommonComponent/Layout';
+import { useContext } from 'react';
+import AuthContext from './store/AuthContext';
 
 
 const App=() => {
+const authcxt=useContext(AuthContext);
 const [cartShow,setCartShow] = useState(false);
 const CartShowHandler=()=>{
   setCartShow(true);
@@ -44,10 +47,10 @@ const CartHideHandler=()=>{
         <ContactUs />
       </Route>
 
-      <Route path='/store/login/profile' exact>
+      {authcxt.isLogin && (<Route path='/store/login/profile' exact>
         <Profile cartShow={CartShowHandler}/>
-      </Route>
-
+      </Route>)}
+      
       <Route path='/store/login' exact>
         <Login cartShow={CartShowHandler}/>
       </Route>
@@ -56,6 +59,10 @@ const CartHideHandler=()=>{
         <ProductDetail cartshow={CartShowHandler}/>
       </Route>
       
+      <Route path='*'>
+        <Redirect to='/'/>
+      </Route>
+
       </Switch>
       </Layout>
     </ContextProvider>

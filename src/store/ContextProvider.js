@@ -5,17 +5,20 @@ import AuthContext from "./AuthContext";
 
 const ContextProvider=props=>{
 
+const localtoken=localStorage.getItem('token');
 const [addedItemList,setAddedItemList] = useState([]);
 const [quantity,setQuantity] = useState(0);
 const [TotalAmount,setTotalAmount]=useState(0);
-const [Token,setToken] = useState(null);
+const [Token,setToken] = useState(localtoken);
 
 const IsLoggedIn=!!Token;
 const LoginHandler=(token)=>{
     setToken(token);
+    localStorage.setItem('token',token);
 }
 const LogoutHandler=()=>{
     setToken(null);
+    localStorage.removeItem('token');
 }
 
 const addItemHandler=(item)=>{
