@@ -76,3 +76,9 @@
     margin-top: 10px;
 }
 
+.authHandle{
+    border:none;
+    background-color: black;
+    color:aqua;
+    font-size: 18px;
+}

@@ -1,8 +1,10 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
 import Footer from "../components/CommonComponent/Footer";
 import Header from "../components/CommonComponent/Header";
+import AuthContext from "../store/AuthContext";
 import styles from './Login.module.css';
 const Login=props=>{
+    const ctx = useContext(AuthContext);
     const [isLogin,setIsLogin]=useState(true);
     const [isLoading,setIsLoading] = useState(false);
  const EmailInputRef=useRef();
@@ -19,7 +21,7 @@ const Login=props=>{
     let url='';
 
    if(isLogin){
-     
+     url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu9mJRJ4CyRuNQ3DerQ3eNg89yd1F95Cs';
     }else{
      url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu9mJRJ4CyRuNQ3DerQ3eNg89yd1F95Cs';
     }
@@ -38,7 +40,9 @@ const Login=props=>{
     .then(res=>{
         setIsLoading(false);
         if(res.ok){
-
+           return res.json().then(data=>{
+            ctx.Login(data.idToken);
+           })
         }else{
             return res.json().then(data=>
                 {let errorMessage='Authentication Failed';

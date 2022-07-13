@@ -5,6 +5,11 @@ import CartButton from '../StoreComponent/Cart/CartButton';
 import styles from './Header.module.css';
 const Header=props=>{
     const ctx=useContext(AuthContext);
+    const AuthHandler=()=>{
+        if(ctx.isLogin){
+            ctx.LogOut();
+        }
+    }
 return (
     <Fragment>
     <header className={styles.header}>
@@ -18,7 +23,7 @@ return (
             <div className={styles.contact}><NavLink activeClassName={styles.active}  to='/contact'>CONTACT US</NavLink></div>
         </div>
         <div className={styles.authbutton}>
-            <div className={styles.login}><NavLink to='/store/login'>Login</NavLink></div>
+            <div className={styles.login}><NavLink to='/store/login'><button className={styles.authHandle} onClick={AuthHandler}>{ctx.isLogin ? 'LogOut':'Login'}</button></NavLink></div>
             <div className={styles.cart}>
                 {props.cart && <CartButton 
                     className={styles.buttons} 

@@ -8,6 +8,15 @@ const ContextProvider=props=>{
 const [addedItemList,setAddedItemList] = useState([]);
 const [quantity,setQuantity] = useState(0);
 const [TotalAmount,setTotalAmount]=useState(0);
+const [Token,setToken] = useState(null);
+
+const IsLoggedIn=!!Token;
+const LoginHandler=(token)=>{
+    setToken(token);
+}
+const LogoutHandler=()=>{
+    setToken(null);
+}
 
 const addItemHandler=(item)=>{
     const itemindex=addedItemList.findIndex(
@@ -51,7 +60,11 @@ const contextitem={
     totalQuantity:quantity,
     total:TotalAmount,
     addItem:addItemHandler,
-    deleteItem:deleteItemHandler
+    deleteItem:deleteItemHandler,
+    token:Token,
+    isLogin:IsLoggedIn,
+    Login:LoginHandler,
+    LogOut:LogoutHandler
  }
     return (
         <AuthContext.Provider value={contextitem}>
