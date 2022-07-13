@@ -1,8 +1,10 @@
 import { useContext, useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import AuthContext from "../store/AuthContext";
 import styles from './Login.module.css';
 const Login=props=>{
     const ctx = useContext(AuthContext);
+    const history = useHistory();
     const [isLogin,setIsLogin]=useState(true);
     const [isLoading,setIsLoading] = useState(false);
  const EmailInputRef=useRef();
@@ -40,6 +42,7 @@ const Login=props=>{
         if(res.ok){
            return res.json().then(data=>{
             ctx.Login(data.idToken);
+            history.replace('/store');
            })
         }else{
             return res.json().then(data=>

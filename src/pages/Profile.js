@@ -3,8 +3,10 @@ import { useRef } from 'react';
 import { useContext } from 'react';
 import AuthContext from '../store/AuthContext';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Profile=props=>{
+  const history = useHistory();
   const [isLoading,setIsLoading] = useState(false);
   const ctx = useContext(AuthContext);
   const NewPasswordRef = useRef();
@@ -17,7 +19,7 @@ const Profile=props=>{
     body:JSON.stringify({
       idToken:ctx.token,
       password:NewPassword,
-      returnSecureToken:false
+      returnSecureToken:true
     }),
     headers:{
       'Content-Type':'application/json'
@@ -28,6 +30,7 @@ const Profile=props=>{
     setIsLoading(false);
     if(res.ok){
       alert('Password Changed Successfully');
+      history.replace('/store');
     }else{
       return res.json().then(err=>alert(err.error.message))
     }
