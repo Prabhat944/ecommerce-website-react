@@ -66,12 +66,14 @@
     border-radius: 3px;
     margin: auto;
     margin-bottom: 15px;
-    background-color: aqua;
 }
 .submit p{
     text-align: center;
 }
-
+.login{
+    background-color: aqua;
+    font-weight: bold;
+}
 .authmode{
     width: fit-content;
     height: 40px;

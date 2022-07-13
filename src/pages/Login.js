@@ -1,6 +1,4 @@
-import { Fragment, useContext, useRef, useState } from "react";
-import Footer from "../components/CommonComponent/Footer";
-import Header from "../components/CommonComponent/Header";
+import { useContext, useRef, useState } from "react";
 import AuthContext from "../store/AuthContext";
 import styles from './Login.module.css';
 const Login=props=>{
@@ -57,8 +55,6 @@ const Login=props=>{
     
  }
     return (
-        <Fragment>
-        <Header cart={true} />
           <section className={styles.section}>
             <form onSubmit={FormSubmitHandler}>
                 <div className={styles.heading}><h2>{isLogin?'Sign In':'Sign Up'}</h2></div>
@@ -71,7 +67,7 @@ const Login=props=>{
                     <input type="password" id="Password" required ref={PasswordInputRef}/>
                 </div>
                 <div className={styles.submit}>
-                    {!isLoading && <button>{isLogin?'Login':'Sign Up'}</button>}
+                    {!isLoading && <button className={styles.login}>{isLogin?'Login':'Sign Up'}</button>}
                     {isLoading && <p>Sending Request...</p>}
                 
                     <button 
@@ -84,8 +80,6 @@ const Login=props=>{
             </form>
             
           </section>
-        <Footer />
-        </Fragment>
     );
 };
 

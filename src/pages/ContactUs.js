@@ -1,6 +1,4 @@
 import { Fragment, useState } from "react";
-import Footer from "../components/CommonComponent/Footer";
-import Header from "../components/CommonComponent/Header";
 import styles from './ContactUs.module.css';
 
 const ContactUs=props=>{
@@ -38,7 +36,6 @@ const ContactFormSubmitHandler=async(event)=>{
 }
 return(
     <Fragment>
-        <Header Cart={false}/>
         <div className={styles.contact}><h2>CONTACT US</h2></div>
         <div className={styles.section}>
             <form onSubmit={ContactFormSubmitHandler}>
@@ -51,7 +48,6 @@ return(
                 <button>SUBMIT</button>
             </form>
         </div>
-        <Footer />
     </Fragment>
 );
 };

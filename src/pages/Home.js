@@ -1,6 +1,4 @@
 import { Fragment, useState ,useEffect,useCallback} from "react";
-import Footer from "../components/CommonComponent/Footer";
-import Header from "../components/CommonComponent/Header";
 import Form from "../components/HomeComponent/Form";
 import TourSection from "../components/HomeComponent/TourSection";
 import styles from './Home.module.css';
@@ -88,10 +86,10 @@ const onCancelHandler=(event)=>{
 
     return (
         <Fragment>
-          <Header cart={false} generics={styles.generics}>
+          <div className={styles.genericsitem}>
             <button className={styles.getalbum}>Get Our Latest Album</button>
             <button className={styles.play}>►</button>
-          </Header>
+          </div>
            <section className={styles.section}>
             <h2>MOVIES TOURS</h2>
             <Form AddedMovie={AddedMovieHandler}/>
@@ -99,7 +97,6 @@ const onCancelHandler=(event)=>{
             <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
             {contents}
            </section>
-          <Footer className={styles.footer} />
         </Fragment>
     );
 };

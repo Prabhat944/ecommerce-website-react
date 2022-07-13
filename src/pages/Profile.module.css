@@ -1,0 +1,52 @@
+.section{
+    width:55%;
+    height:60vh;
+    margin: auto;
+}
+.section h1{
+    text-align: center;
+    font-size: 45px;
+}
+.section form{
+    width:400px;
+    height:300px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px 10px;
+    background-color: rgb(178, 233, 245);
+    border:3px ridge rgb(7, 187, 187);
+    border-radius: 5px;
+}
+.title{
+    width:fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.newpassword{
+    display:flex;
+    flex-direction: column;
+}
+.newpassword label{
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 15px;
+}
+.newpassword input{
+    height:30px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.submit{
+    width:fit-content;
+    height:fit-content;
+    margin: auto;
+}
+.submit button{
+    background-color: aqua;
+    font-size: 16px;
+    width:100px;
+    height:30px;
+    border-radius: 3px;
+}

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../CommonComponent/Footer";
-import Header from "../../CommonComponent/Header";
 import CommentList from "./CommentList";
 import ImageDetail from "./ImageDetail/ImageDetail";
 import styles from './ProductDetail.module.css';
@@ -105,8 +103,6 @@ const ProductDetail=(props)=>{
     );
     
     return(
-        <div>
-            <Header cart={true} cartshow={props.cartshow}/>
             <section className={styles.section}>
                 <ImageDetail src={selectedItem.imageUrl} alt={selectedItem.title}  item={selectedItem}/>
                 <div className={styles.details}>
@@ -133,8 +129,6 @@ const ProductDetail=(props)=>{
                     </div>
                 </div>
             </section>
-            <Footer/>
-        </div>
     );
 
 };

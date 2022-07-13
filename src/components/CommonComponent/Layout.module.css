@@ -1,0 +1,22 @@
+.generics{
+    margin-top: 63px;
+    width:100vw;
+    height:150px;
+    background-color: gray;
+    color: white;
+    display: grid;
+    justify-content: center;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    z-index: 10;
+
+}
+.generics h2{
+    font-size: 75px;
+    margin-top: 10px;
+}
+.main{
+    min-width:500px;
+    min-height:65vh;
+    margin: auto;
+}

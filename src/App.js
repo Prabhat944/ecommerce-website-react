@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import ContactUs from './pages/ContactUs';
 import ProductDetail from './components/StoreComponent/ProductDetail/ProductDetail';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
+import Layout from './components/CommonComponent/Layout';
 
 
 const App=() => {
@@ -20,6 +22,7 @@ const CartHideHandler=()=>{
 };
   return (
     <ContextProvider >
+      <Layout cartshow={CartShowHandler}>
       {cartShow && <Cart hidecart={CartHideHandler} />}
       <Switch>
         <Route path='/' exact>
@@ -41,6 +44,10 @@ const CartHideHandler=()=>{
         <ContactUs />
       </Route>
 
+      <Route path='/store/login/profile' exact>
+        <Profile cartShow={CartShowHandler}/>
+      </Route>
+
       <Route path='/store/login' exact>
         <Login cartShow={CartShowHandler}/>
       </Route>
@@ -48,9 +55,9 @@ const CartHideHandler=()=>{
       <Route path='/store/:productId'>
         <ProductDetail cartshow={CartShowHandler}/>
       </Route>
-       
       
       </Switch>
+      </Layout>
     </ContextProvider>
   );
 }
