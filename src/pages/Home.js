@@ -79,6 +79,7 @@ if(isLoading){
 }
 const onCancelHandler=(event)=>{
   event.preventDefault();
+  
   clearTimeout(retry);
   setError(null);
 }

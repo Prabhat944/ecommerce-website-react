@@ -29,6 +29,7 @@ const Profile=props=>{
   .then(res=>{
     setIsLoading(false);
     if(res.ok){
+      res.json().then(data=>ctx.Login(data.idToken))
       alert('Password Changed Successfully');
       history.replace('/store');
     }else{
