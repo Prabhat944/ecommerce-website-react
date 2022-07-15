@@ -41,9 +41,12 @@ const Login=props=>{
         setIsLoading(false);
         if(res.ok){
            return res.json().then(data=>{
-            ctx.Login(data.idToken);
+            ctx.Login(
+                {token:data.idToken,
+                 email:data.email});
             history.replace('/store');
            })
+           
         }else{
             return res.json().then(data=>
                 {let errorMessage='Authentication Failed';
@@ -53,8 +56,8 @@ const Login=props=>{
                 alert(errorMessage);
             }
     )}
-    }
-    )
+    })
+    .catch(err=>console.log('Login Error',err))
     
  }
     return (

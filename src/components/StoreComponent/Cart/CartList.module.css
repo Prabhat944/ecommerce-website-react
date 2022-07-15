@@ -47,7 +47,10 @@
     border: none;
     margin-left:12% ;
 }
-
+.remove button:hover{
+    background-color: rgb(255, 19, 19);
+    cursor: pointer;
+}
 .border{
     list-style: none;
     display: inline-flex;

@@ -1,5 +1,5 @@
 .section{
-   width:60%;
+   max-width:800px;
    height: auto;
    margin:auto;
    z-index: 0;
@@ -7,7 +7,9 @@
 .section h2{
     font-family:cursive;
     text-align: center;
-    padding: 20px;
+    font-size: 35px;
+    padding-top: 20px;
+    margin-bottom: 0;
     
 }
 .items{

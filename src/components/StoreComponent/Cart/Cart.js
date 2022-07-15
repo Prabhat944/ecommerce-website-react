@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext} from 'react';
 import AuthContext from '../../../store/AuthContext';
 import Model from '../UI/Model';
 import styles from './Cart.module.css';
@@ -7,12 +7,12 @@ import CartList from './CartList';
 
     
 const Cart=props=>{
-
    const ctx=useContext(AuthContext);
 
     const cartitem=ctx.items.map(item=>(
     <CartList 
     key={Math.random().toString()}
+    id={item._id}
     title={item.title}
     src={item.imageUrl}
     price={item.price}

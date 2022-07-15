@@ -5,6 +5,7 @@ import styles from './ProductForm.module.css';
 const ProductForm = props =>{
     const ctx=useContext(AuthContext);
     const addToCart=()=>{
+        
         ctx.addItem({...props.items,quantity:1});
     };
     return (

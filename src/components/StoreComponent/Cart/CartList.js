@@ -8,6 +8,7 @@ const CartList=(props)=>{
     const removeItem=event=>{
         event.preventDefault();
         ctx.deleteItem(props.title);
+        
     }
     
      return (<Fragment>

@@ -2,7 +2,9 @@ import React from 'react';
 
 const AuthContext = React.createContext(
     {
+    email:'',
     items:[],
+    fetchItem:(arr)=>{},
     totalQuantity:0,
     total:0,
     addItem:(item)=>{},

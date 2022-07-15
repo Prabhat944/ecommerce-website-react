@@ -1,5 +1,5 @@
 .form{
-    width:350px;
+    width:300px;
     height:35px;
     margin: auto;
     display:flex;
@@ -19,4 +19,9 @@
     font-size: 15px;
     float:right;
     border: none;
+}
+.form button:hover{
+    background-color: aqua;
+    cursor: pointer;
+    color:gray;
 }
