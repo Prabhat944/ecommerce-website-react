@@ -19,7 +19,7 @@ const Cart=props=>{
     quantity={item.quantity}
     />));
     return (
-        <Model>
+        <Model onCloseCart={props.hidecart}>
             <div className={styles.cartname}>
             <label >CART</label>
             <button onClick={props.hidecart}>X</button>

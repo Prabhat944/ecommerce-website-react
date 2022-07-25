@@ -14,13 +14,16 @@
    
 }
 .cartname button{  
-    width:20px;
+    width:30px;
     height:20px;
     font-size: 14px;
     border-radius: 1.5px;
     font-weight: bold;
     position: absolute;
     right:0;
+    background-color: rgb(216, 15, 15);
+    color: white;
+    
 }
 
 .title{
