@@ -4,7 +4,6 @@
    border:5px groove aqua;
    margin: auto;
    margin-bottom: 20px;
-
 }
 .form form{
     width: 70%;
@@ -45,4 +44,12 @@
     border-radius: 10px;
     margin:10px 40%;
     margin-bottom: 20px;
+}
+@media(max-width:700px){
+   .form{
+    width: 100%;
+   }
+   .form form{
+    width: 80%;
+   }
 }

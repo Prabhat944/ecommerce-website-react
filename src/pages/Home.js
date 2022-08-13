@@ -1,4 +1,4 @@
-import { Fragment, useState ,useEffect,useCallback} from "react";
+import { useState ,useEffect,useCallback} from "react";
 import Form from "../components/HomeComponent/Form";
 import TourSection from "../components/HomeComponent/TourSection";
 import styles from './Home.module.css';
@@ -86,7 +86,7 @@ const onCancelHandler=(event)=>{
 
 
     return (
-        <Fragment>
+        <div className={styles.container}>
           <div className={styles.genericsitem}>
             <button className={styles.getalbum}>Get Our Latest Album</button>
             <button className={styles.play}>►</button>
@@ -96,9 +96,9 @@ const onCancelHandler=(event)=>{
             <Form AddedMovie={AddedMovieHandler}/>
             <button className={styles.movielist} onClick={MovieListHandler}>Fetch Movie</button>
             <button className={styles.movielist} onClick={onCancelHandler}>Cancel</button>
-            {contents}
+            <span className={styles.content}>{contents}</span>
            </section>
-        </Fragment>
+        </div>
     );
 };
 

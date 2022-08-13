@@ -87,3 +87,24 @@
 .authmode:hover{
     cursor: pointer;
 }
+@media(max-width:700px){
+    .section{
+        max-width:500px;
+        min-width: 350px;
+        width:100%;
+        margin: auto;
+        margin-top: 90px;
+    }
+    .section form{
+        max-width:450px;
+        min-width:400px;
+        width:100%;
+        margin: auto;
+    }
+    .email{
+        width:80%;
+    }
+    .password{
+        width:80%;
+    }
+}

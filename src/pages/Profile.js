@@ -10,7 +10,8 @@ const Profile=props=>{
   const [isLoading,setIsLoading] = useState(false);
   const ctx = useContext(AuthContext);
   const NewPasswordRef = useRef();
- const NewPasswordHandler=event=>{
+  const userId=localStorage.getItem('userId');
+  const NewPasswordHandler=event=>{
   event.preventDefault();
   setIsLoading(true);
   const NewPassword=NewPasswordRef.current.value;
@@ -41,7 +42,8 @@ const Profile=props=>{
     return (
       <section className={styles.section}>
         <h1>Your User Profile</h1>
-        <form onSubmit={NewPasswordHandler}>
+        <h4>{userId}</h4>
+        <form onSubmit={NewPasswordHandler} className={styles.formContainer}>
           <div className={styles.title}>
             <h2>Change Your Password</h2>
           </div>

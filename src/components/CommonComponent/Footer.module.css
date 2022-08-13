@@ -3,6 +3,7 @@
    bottom: 0;
    width:100vw;
    height: 130px;
+   max-width:1650px;
    background-color: rgb(42, 184, 232);
    display: flex;
    justify-content:space-evenly;
@@ -25,8 +26,24 @@
     font-weight: bold;
     font-size: 25px;
     display: flex;
+    gap:10px;
     justify-content:space-evenly;
+    cursor:pointer;
     
 }
 
+@media(max-width:700px){
+   .footer{
+    width:100%;
+    max-width: 700px;
+    min-width: 500px;
+   }
+   .generics{
+    font-size: 30px;
+   }
+   .logos{
+      flex-direction: column;
+      gap:2px;
+   }
+}
 

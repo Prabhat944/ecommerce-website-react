@@ -1,3 +1,7 @@
+.container{
+    max-width: 1650px;
+    width:100vw;
+}
 .genericsitem{
     height:150px;
     width: 100%;
@@ -39,6 +43,9 @@
     width:55%;
     height:fit-content;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 15px;
 }
 .movielist{
@@ -48,7 +55,6 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: aqua;
     border-radius: 3px;
-    margin-left: 41%;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -76,4 +82,27 @@
 }
 .forms{
     margin: auto;
+}
+.content{
+    max-width: 100%;
+
+}
+
+@media(min-width:300px) and (max-width:700px){
+    .section{
+        width:70%;
+    }
+    .getalbum{
+        max-width: fit-content;
+    }
+    .container{
+        max-width: 695px;
+        min-width: 300px;
+        width:100%;
+    }
+    .content{
+        max-width:450px;
+        
+
+    }
 }

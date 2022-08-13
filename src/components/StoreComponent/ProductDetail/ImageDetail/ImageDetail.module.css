@@ -1,7 +1,8 @@
 .imagesection{
     width: 40%;
     height:77vh;
-    
+    display: flex;
+    flex-direction: column;
 }
 .AddToCart{
     width: 100%;
@@ -49,4 +50,40 @@
    }
    .mainimage:hover img{
     transform:scale(1.5);
+}
+
+@media(max-width:700px){
+   .imagesection{
+    width: 100%;
+    height:400px;
+    gap:20px;
+    margin-bottom: 50px;
+   }
+   .mainimage:hover img{
+    transform: scale(1.1);
+   }
+   .allsideview img{
+    width: 70px;
+    height: 70px;
+   }
+   .allsideview{
+    width:100%;
+    height:70px;
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+  .AddToCart{
+    width:100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .AddToCart button{
+    width:200px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(43, 209, 25);
+    border-radius: 15px;
+  }
 }

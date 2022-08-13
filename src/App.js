@@ -1,5 +1,5 @@
 import {Redirect, Route,Switch} from 'react-router-dom';
-import React, { useState ,Suspense} from 'react';
+import React, { useState ,Suspense, useEffect} from 'react';
 import Cart from './components/StoreComponent/Cart/Cart';
 // import Store from './pages/Store';
 // import About from './pages/About';
@@ -27,6 +27,15 @@ const CartShowHandler=()=>{
 const CartHideHandler=()=>{
   setCartShow(false);
 };
+
+
+
+
+useEffect(()=>{
+  if(ctx.cartUpdate){
+    ctx.cartUpdateHandler();
+  }
+},[ctx])
   return (
     
       <Layout cartshow={CartShowHandler}>

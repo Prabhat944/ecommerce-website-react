@@ -122,7 +122,7 @@ const ProductDetail=(props)=>{
                             <label htmlFor="Name">Name:</label><br/>
                             <input type='text' id='Name' onChange={NameInputHandler} value={userName} required/><br/>
                             <label htmlFor="Comment">Your Comment:</label><br/>
-                            <input type='text' id="Comment" min='2' onChange={CommentInputHandler} value={userComment} required/><br/>
+                            <textarea id="Comment" min='2' onChange={CommentInputHandler} value={userComment} required/><br/>
                             <button>SUBMIT</button>
                         </form>
                         

@@ -13,3 +13,11 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
+@media(max-width:700px){
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

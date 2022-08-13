@@ -13,7 +13,7 @@ const Login=props=>{
  const switchAuthModeHandler=()=>{
     setIsLogin((prev)=>!prev);
  }
- const FormSubmitHandler=(event)=>{
+ const FormSubmitHandler=async(event)=>{
     event.preventDefault();
     setIsLoading(true);
     const userEmail=EmailInputRef.current.value;
@@ -26,7 +26,7 @@ const Login=props=>{
      url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCUqqKD1Ka32amxBnRDVKUADu_VUkm27oc';
     }
     
-    fetch(url,{
+    await fetch(url,{
         method:'POST',
         body:JSON.stringify({
             email:userEmail,
@@ -44,6 +44,7 @@ const Login=props=>{
             ctx.Login(
                 {token:data.idToken,
                  email:data.email});
+            localStorage.setItem('userId',data.email);
             history.replace('/store');
            })
            

@@ -5,6 +5,8 @@ const AuthContext = React.createContext(
     email:'',
     items:[],
     user:'',
+    cartUpdate:false,
+    cartUpdateHandler:()=>{},
     fetchItem:(arr)=>{},
     totalQuantity:0,
     total:0,

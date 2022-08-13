@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "react-https-e99ad"
-  }
+    "default": "react-https-e99ad",
+    "ecommerce": "e-commerce-f98f7"
+  },
+  "targets": {},
+  "etags": {}
 }
