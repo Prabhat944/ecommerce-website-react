@@ -4,14 +4,15 @@ import AuthContext from "./AuthContext";
 
 
 const ContextProvider=props=>{
-
-const localtoken=localStorage.getItem('token');
-const url='https://crudcrud.com/api/c4381b118586483e8aba3775e2e2d6ac/';
+    const localtoken=localStorage.getItem('token');
 const [Email,setEmail] = useState('');
 const [addedItemList,setAddedItemList] = useState([]);
 const [quantity,setQuantity] = useState(0);
 const [TotalAmount,setTotalAmount]=useState(0);
 const [Token,setToken] = useState(localtoken);
+
+
+const url='https://e-commerce-f98f7-default-rtdb.firebaseio.com/';
 
 const FetchItemHandler=(arr)=>{
     let tempQuantity=0;
@@ -25,17 +26,19 @@ const FetchItemHandler=(arr)=>{
     setAddedItemList([...arr]);
 }
 
-useEffect(()=>{
-    const email=localStorage.getItem('email');
-    setEmail(email);
-    fetch(`${url}cart${Email}`)
-           .then(res=>res.json())
-           .then(data=>{
-            if(data.length > 0)
-            { FetchItemHandler(data)}
-             })
-            .catch(err=>console.log("Fetching data error",err))
-    },[Email])
+// useEffect(()=>{
+//     const email=localStorage.getItem('email');
+//     setEmail(email);
+//     const cartdata=async()=>{
+//         await fetch(`${url}cart${Email}.json`)
+//            .then(res=>res.json())
+//            .then(data=>{
+//             if(data.length > 0)
+//             { FetchItemHandler(data)}
+//              })
+//             .catch(err=>console.log(err))}
+//     cartdata();
+//     },[Email])
 const IsLoggedIn=!!Token;
 const LoginHandler=(obj)=>{
     const email=obj.email.replace('@','');
@@ -62,7 +65,8 @@ const addItemHandler=async(item)=>{
     );
     const existingItem=addedItemList[itemindex];
     
-    const URL=existingItem ?`${url}cart${Email}/${existingItem.KeyId || existingItem._id}` : `${url}cart${Email}`;
+    const URL=existingItem ?`${url}cart${Email}/${existingItem.KeyId || existingItem._id}.json` : `${url}cart${Email}.json`;
+    console.log(URL);
     await fetch(URL,{
         method:existingItem ?'PUT':'POST',
         body:JSON.stringify(existingItem ?{...existingItem,quantity:existingItem.quantity+item.quantity}:{...item}),
@@ -98,7 +102,7 @@ const deleteItemHandler=async(title)=>{
         itemlist=>itemlist.title === title
     )
     const existingItem =addedItemList[itemindex];
-    const URL=`${url}cart${Email}/${existingItem.KeyId || existingItem._id}`;
+    const URL=`${url}cart${Email}/${existingItem.KeyId || existingItem._id}.json`;
     if(existingItem.quantity >= 2){
         await fetch(URL,{
             method:"PUT",
@@ -133,6 +137,7 @@ const deleteItemHandler=async(title)=>{
 const contextitem={
     email:Email,
     items:addedItemList,
+    user:'',
     fetchItem:FetchItemHandler,
     totalQuantity:quantity,
     total:TotalAmount,

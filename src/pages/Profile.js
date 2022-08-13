@@ -14,7 +14,7 @@ const Profile=props=>{
   event.preventDefault();
   setIsLoading(true);
   const NewPassword=NewPasswordRef.current.value;
-  fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAu9mJRJ4CyRuNQ3DerQ3eNg89yd1F95Cs',{
+  fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCUqqKD1Ka32amxBnRDVKUADu_VUkm27oc',{
     method:"POST",
     body:JSON.stringify({
       idToken:ctx.token,

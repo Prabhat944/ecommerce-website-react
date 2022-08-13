@@ -5,7 +5,7 @@ import styles from './TourSection.module.css';
 const TourSection=props=>{
   const MovieDeleteHandler=async(event)=>{
     event.preventDefault();
-    await fetch(`https://react-https-e99ad-default-rtdb.firebaseio.com/Movies/${props.id}.json/`,{method:'DELETE'});
+    await fetch(`https://e-commerce-f98f7-default-rtdb.firebaseio.com/Movies/${props.id}.json/`,{method:'DELETE'});
     props.fetchTheMovie();
   }
     return (

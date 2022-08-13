@@ -21,9 +21,9 @@ const Login=props=>{
     let url='';
 
    if(isLogin){
-     url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu9mJRJ4CyRuNQ3DerQ3eNg89yd1F95Cs';
+     url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCUqqKD1Ka32amxBnRDVKUADu_VUkm27oc';
     }else{
-     url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu9mJRJ4CyRuNQ3DerQ3eNg89yd1F95Cs';
+     url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCUqqKD1Ka32amxBnRDVKUADu_VUkm27oc';
     }
     
     fetch(url,{

@@ -12,7 +12,7 @@ const Home=props=>{
   setIsLoading(true);
   setError(null);
   try{
-    const response=await fetch('https://react-https-e99ad-default-rtdb.firebaseio.com/Movies.json');
+    const response=await fetch('https://e-commerce-f98f7-default-rtdb.firebaseio.com//Movies.json');
 
     if(!response.ok){
       throw new Error("Something went wrong!!");
@@ -40,7 +40,7 @@ setMovieList(MovieList);
 },[]);
 
  const AddedMovieHandler=async(movies)=>{
-  await fetch('https://react-https-e99ad-default-rtdb.firebaseio.com/Movies.json',{
+  await fetch('https://e-commerce-f98f7-default-rtdb.firebaseio.com//Movies.json',{
     method:'POST',
     body:JSON.stringify(movies),
     headers:{

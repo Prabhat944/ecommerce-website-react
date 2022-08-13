@@ -4,6 +4,7 @@ const AuthContext = React.createContext(
     {
     email:'',
     items:[],
+    user:'',
     fetchItem:(arr)=>{},
     totalQuantity:0,
     total:0,

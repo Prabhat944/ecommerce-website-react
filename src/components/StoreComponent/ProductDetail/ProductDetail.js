@@ -66,7 +66,7 @@ const ProductDetail=(props)=>{
         setUserComment(event.target.value);
     }
     const CommentHandler=async()=>{
-      const response=await fetch(`https://react-https-e99ad-default-rtdb.firebaseio.com/Comment/${selectedItem.name}.json`);
+      const response=await fetch(`https://e-commerce-f98f7-default-rtdb.firebaseio.com//Comment/${selectedItem.name}.json`);
       const data=await response.json();
        const commentArr=[];
        for(const key in data){
@@ -87,7 +87,7 @@ const ProductDetail=(props)=>{
             name:event.target.Name.value,
             comments:event.target.Comment.value
         };
-        await fetch(`https://react-https-e99ad-default-rtdb.firebaseio.com/Comment/${selectedItem.name}.json`,{
+        await fetch(`https://e-commerce-f98f7-default-rtdb.firebaseio.com/Comment/${selectedItem.name}.json`,{
             method:"POST",
             body:JSON.stringify(comment),
             headers:{

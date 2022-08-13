@@ -22,7 +22,7 @@ const ContactFormSubmitHandler=async(event)=>{
         email:userEmail,
         phone:userPhone
     };
-    await fetch('https://react-https-e99ad-default-rtdb.firebaseio.com/UserContactInfo.json',{
+    await fetch('https://e-commerce-f98f7-default-rtdb.firebaseio.com/UserContactInfo.json',{
         method:'POST',
         body:JSON.stringify(userDetail),
         headers:{
